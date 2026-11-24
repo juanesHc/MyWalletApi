@@ -6,12 +6,11 @@ import co.com.mywallet.model.exception.BusinessException;
 
 public record Location(String city, String department) {
     public Location {
-        city= TextHelper.applyTrim(city);
-        department=TextHelper.applyTrim(department);
+        city = TextHelper.applyTrim(city);
+        department = TextHelper.applyTrim(department);
 
         if (TextHelper.isEmpty(city) || TextHelper.isEmpty(department)) {
             throw new BusinessException(BusinessError.INVALID_LOCATION);
         }
     }
-
 }

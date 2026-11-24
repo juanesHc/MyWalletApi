@@ -8,8 +8,8 @@ public record PhoneNumber(String value) {
     private static final String PATTERN = "(\\+57)?3\\d{9}";
 
     public PhoneNumber {
-        value=TextHelper.applyTrim(value);
-        if (!TextHelper.patternIsValid(value,PATTERN)) {
+        value = TextHelper.applyTrim(value);
+        if (!TextHelper.patternIsValid(value, PATTERN)) {
             throw new BusinessException(BusinessError.INVALID_PHONE);
         }
     }

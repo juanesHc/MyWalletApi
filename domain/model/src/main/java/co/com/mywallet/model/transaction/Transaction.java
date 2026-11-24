@@ -1,7 +1,6 @@
 package co.com.mywallet.model.transaction;
 
-import co.com.mywallet.model.transaction.enums.ExpenseCategory;
-import co.com.mywallet.model.transaction.enums.TransactionType;
+import co.com.mywallet.model.transaction.valueobject.TransactionCategory;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -19,10 +18,13 @@ public class Transaction {
     private final Instant updatedAt;
 
     private final UUID userId;
-    private final TransactionType type;
     private final BigDecimal amount;
-    private final ExpenseCategory expenseCategory;
+    private final TransactionCategory category;
     private final String description;
     private final LocalDate date;
+
+    public BigDecimal signedAmount() {
+        return category.isExpense() ? amount.negate() : amount;
+    }
 
 }

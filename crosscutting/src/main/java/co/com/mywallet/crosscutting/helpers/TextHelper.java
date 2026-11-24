@@ -1,5 +1,7 @@
 package co.com.mywallet.crosscutting.helpers;
 
+import java.util.Locale;
+
 public class TextHelper {
     public static final String EMPTY = "";
     public static final String ONLY_LETTERS_SPACES = "^[A-Za-záÁéÉíÍóÓúÚñÑ]+(?: [A-Za-záÁéÉíÍóÓúÚñÑ]+)*$";
@@ -10,7 +12,7 @@ public class TextHelper {
     }
 
     public static boolean patternIsValid(final String string, final String pattern) {
-        return applyTrim(string).matches(concat("^",pattern,"$"));
+        return applyTrim(string).matches(concat("^", pattern, "$"));
     }
 
     public static boolean containOnlyLettersAndSpace(final String string) {
@@ -21,10 +23,10 @@ public class TextHelper {
         return patternIsValid(string, ONLY_NUMBERS);
     }
 
-    public static String concat(final String...strings) {
+    public static String concat(final String... strings) {
         var sb = new StringBuilder(EMPTY);
 
-        for(String string : strings) {
+        for (String string : strings) {
             sb.append(getDefault(string));
         }
 
@@ -65,5 +67,9 @@ public class TextHelper {
 
     public static boolean maxLenIsValid(final String string, final int max) {
         return NumericHelper.isLessOrEqualTo(len(string), max);
+    }
+
+    public static String toUpperCase(final String string) {
+        return applyTrim(string).toUpperCase(Locale.ROOT);
     }
 }

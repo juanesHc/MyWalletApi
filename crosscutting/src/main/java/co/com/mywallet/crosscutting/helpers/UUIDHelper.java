@@ -44,5 +44,4 @@ public class UUIDHelper {
     public static final UUID convertToUUID(final Object uuidAsObject) {
         return convertToUUID(ObjectHelper.getDefault(uuidAsObject, TextHelper.EMPTY).toString());
     }
-
 }

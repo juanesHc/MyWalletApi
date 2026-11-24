@@ -18,5 +18,4 @@ public class Notification {
     private final NotificationType type;
     private final String message;
     private final Instant readAt;
-
 }

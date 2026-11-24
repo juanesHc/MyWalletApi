@@ -6,6 +6,6 @@ public class ObjectHelper {
     }
 
     public static <O> O getDefault(final O object, final O defaultObject) {
-        return isNull(object)? defaultObject : object;
+        return isNull(object) ? defaultObject : object;
     }
 }

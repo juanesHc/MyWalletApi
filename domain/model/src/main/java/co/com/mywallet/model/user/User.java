@@ -13,7 +13,6 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.util.UUID;
 
-
 @Getter
 @Builder(toBuilder = true)
 public class User {
@@ -31,5 +30,4 @@ public class User {
     private final BigDecimal monthlySpendingLimit;
     private final Role role;
     private final UserStatus status;
-
 }
