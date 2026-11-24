@@ -9,3 +9,4 @@ plugins {
 }
 
 rootProject.name = 'MyWallet'
+include ':crosscutting'
